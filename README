@@ -1,0 +1,15 @@
+a wordle game implementation in C/C++.
+
+features:
+ - single header file that contains the logic of the game "wordle.h". <- Done
+ - a terminal version "wordle-terminal.cpp". <- Done
+ - a gui version with raylib "wordle-raylib.cpp". <- Done
+ - a wasm version with a javascript compatibility layer to run on the browser. <- Maybe
+
+notes:
+ - this was inspired by various projects:
+    - https://github.com/tsoding/snake-c-wasm
+    - https://github.com/Lookins01/wudoku
+    - https://tinyurl.com/5dawd8yj
+ - the "words" file that contains the words is taken from: https://github.com/AyrA/Wordle-C, under the MIT Licnese.
+ - small optimization: instead of looping through all words, the game generates a table of indices for the first letters of the words in the "words" file (example: A index 0, B index 100, C index 200), and loop through that range (example, CRANE will only be between C and D) so it will look for  fewer words than the entire list. i did not profile it and i don't think it is that significant, otherwise i just wanna mention it.
